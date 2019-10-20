@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
     submitted = false;
     returnUrl: string;
 
+    //dependencies that are required by component, automaticcaly injected when component is created
     constructor(
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
@@ -25,18 +26,26 @@ export class LoginComponent implements OnInit {
         }
     }
 
+    //run once after componenet is created
+
     ngOnInit() {
+        //creates new FormGroup and assign it to this.loginForm prop
         this.loginForm = this.formBuilder.group({
+            //params passed into FormBuilder tell it to create 2 form controls: username & password
+            //initalized with "" and set to required
             username: ['', Validators.required],
             password: ['', Validators.required]
         });
 
         // get return url from route parameters or default to '/'
+        //lets you redirect user back to original page before logging in
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
 
     // convenience getter for easy access to form fields
     get f() { return this.loginForm.controls; }
+
+
 
     onSubmit() {
         this.submitted = true;
@@ -47,14 +56,21 @@ export class LoginComponent implements OnInit {
         }
 
         this.loading = true;
+        //authenticationService returns an Observable that we subscribe() for the results of authentication
+        
         this.authenticationService.login(this.f.username.value, this.f.password.value)
+        
+            //after the first value is emitted, pipe(first()) unsubscribes from the observable immediately
             .pipe(first())
             .subscribe(
                 data => {
+                    //on success, user is redirected to returnUrl by:
                     this.router.navigate([this.returnUrl]);
                 },
+                //on fail, the error message is stored in this.error
                 error => {
                     this.alertService.error(error);
+                    //and loading prop is reset back to false
                     this.loading = false;
                 });
     }

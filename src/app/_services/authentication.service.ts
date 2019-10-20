@@ -11,7 +11,11 @@ export class AuthenticationService {
     public currentUser: Observable<User>;
 
     constructor(private http: HttpClient) {
+
+        //BehaviorSubject (from RxJS) keeps hold of the current value and emits it to any new subscribers as soon as they subscribe
+
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+        //
         this.currentUser = this.currentUserSubject.asObservable();
     }
 
@@ -20,6 +24,7 @@ export class AuthenticationService {
     }
 
     login(username: string, password: string) {
+
         return this.http.post<any>(`/users/authenticate`, { username, password })
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
@@ -36,6 +41,7 @@ export class AuthenticationService {
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
+        //Observable get notified of changes and are sent to this method, currentUser is passed into each subscriber
         this.currentUserSubject.next(null);
     }
 }
