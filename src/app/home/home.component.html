@@ -2,6 +2,15 @@
 <p>Welcome back! You want more nom noms?</p>
 <h3>Hungry? </h3>
 <ul>
+
+<div class="row">
+<!-- col lg 6 -->
+<app-image-box (click)="addToWinners()" [image]="food.image" *ngFor="let food of foods"></app-image-box>
+
+    
+    <!-- col lg 6 end -->
+</div>
+
     <!-- <li *ngFor="let user of users">
         {{user.username}} ({{user.firstName}} {{user.lastName}})
         - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
@@ -10,4 +19,22 @@
 
         <!-- <li *ngFor="let item of items">
     </li> -->
+<!-- 
+<hr/>List of Images<hr/>
+
+<div *ngFor="let i of foods">
+<img src={{i.image}}> 
+
+
+
+
+
+
+    
+</div> -->
+
+
+
+
+
 </ul>
