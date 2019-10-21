@@ -15,6 +15,7 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { ImageBoxComponent } from './image-box/image-box.component';
+import { PreferencesModalComponent } from './preferences-modal/preferences-modal.component';
 
 @NgModule({
     imports: [
@@ -29,7 +30,8 @@ import { ImageBoxComponent } from './image-box/image-box.component';
         HomeComponent,
         LoginComponent,
         RegisterComponent,
-        ImageBoxComponent
+        ImageBoxComponent,
+        PreferencesModalComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
