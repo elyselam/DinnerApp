@@ -19,6 +19,8 @@ import { ImageBoxComponent } from './image-box/image-box.component';
 
 import { PreferencesSurveyComponent } from './preferences-survey/preferences-survey.component';
 import { ClickableCuisineComponent } from './clickable-cuisine/clickable-cuisine.component';
+import { CuisinesComponent } from './cuisines/cuisines.component';
+
 
 @NgModule({
     imports: [
@@ -35,7 +37,6 @@ import { ClickableCuisineComponent } from './clickable-cuisine/clickable-cuisine
         RegisterComponent,
         ImageBoxComponent,
         CuisinesComponent,
-        ClickableCuisine,
         ClickableCuisineComponent,
     
     ],

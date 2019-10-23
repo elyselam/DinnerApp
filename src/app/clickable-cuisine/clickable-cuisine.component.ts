@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CuisineServiceService } from '../services/cuisine-service.service';
 
 @Component({
   selector: 'app-clickable-cuisine',
@@ -7,23 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClickableCuisineComponent implements OnInit {
   // the cuisine will be inputted from a parent component
- @Input() cuisine;
- clicked: boolean;
+ @Input() cuisine : string ;
+ @Input() clicked: boolean;
 
  //inject the cuisine service for access to the data it holds
-  constructor(private cuisineService: CuisineService) { }
+  constructor(private cuisineServiceService: CuisineServiceService) { }
 
   ngOnInit() {
   }
 
   addToArray(){
     // if the clicked cuisine is not already in likedCuisines, 
-    if(this.cuisineService.likedCuisines.indexOf(this.cuisine)===-1){
+    if(this.cuisineServiceService.likedCuisines.indexOf(this.cuisine)===-1){
 
       //add the clicked cuisine to the 'likedCuisines' array in the service.
-      this.cuisineService.likedCuisines.push(this.cuisine);
+      this.cuisineServiceService.likedCuisines.push(this.cuisine);
       //log the array as it grows
-      console.log(this.cuisineService.likedCuisines);
+      console.log(this.cuisineServiceService.likedCuisines);
       //set clicked to true to hide the clicked cuisine
       this.clicked = true;
     }

@@ -1,6 +1,7 @@
+import { CuisineServiceService } from '../services/cuisine-service.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { CuisineService } from './cuisines.service';
+
 
 @Component({
   selector: 'app-cuisines',
@@ -14,13 +15,13 @@ export class CuisinesComponent implements OnInit {
   cuisines: any;
 
   address: string;
-  constructor(private cuisineService: CuisineService) { }
+  constructor(private cuisineServiceService: CuisineServiceService) { }
 
   ngOnInit() {
     //set the cuisines on this component equal to the cuisineService cuisines.
-    this.cuisines = this.cuisineService.cuisines;
+    this.cuisines = this.cuisineServiceService.cuisines;
     //set the likedCuisines array of this component to the likedCuisines of the cuisineService
-    this.likedCuisines = this.cuisineService.likedCuisines;
+    this.likedCuisines = this.cuisineServiceService.likedCuisines;
 
     //form group with one form control for address.
     this.registerForm = new FormGroup({
@@ -35,7 +36,7 @@ export class CuisinesComponent implements OnInit {
   }
 
   submitPreferences(){
-    alert(`Preferences are: ${this.cuisineService.likedCuisines}`)
+    alert(`Preferences are: ${this.cuisineServiceService.likedCuisines}`)
   }
   }
 
