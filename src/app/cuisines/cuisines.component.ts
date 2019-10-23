@@ -31,7 +31,7 @@ export class CuisinesComponent implements OnInit {
 
   // runs when registerForm is submitted.
   logRegisterValues(){
-    this.address = this.registerForm.value.address
+    this.address = this.registerForm.value.address;
     this.registerForm.reset();
   }
 
