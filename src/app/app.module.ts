@@ -15,7 +15,10 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { ImageBoxComponent } from './image-box/image-box.component';
-import { PreferencesModalComponent } from './preferences-modal/preferences-modal.component';
+
+
+import { PreferencesSurveyComponent } from './preferences-survey/preferences-survey.component';
+import { ClickableCuisineComponent } from './clickable-cuisine/clickable-cuisine.component';
 
 @NgModule({
     imports: [
@@ -31,7 +34,10 @@ import { PreferencesModalComponent } from './preferences-modal/preferences-modal
         LoginComponent,
         RegisterComponent,
         ImageBoxComponent,
-        PreferencesModalComponent
+        CuisinesComponent,
+        ClickableCuisine,
+        ClickableCuisineComponent,
+    
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

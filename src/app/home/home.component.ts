@@ -16,10 +16,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     foods = [       
         // tslint:disable-next-line: quotemark
         {image: "https://images.vexels.com/media/users/3/157209/isolated/preview/725aa2473489db2e550656210c557f18-cheesy-pizza-icon-by-vexels.png",
+        name: "pizza",
         price: "$$",
-        cuisine: "chinese"},
+        cuisine: "italian"},
 
         {image: "https://cdn3.iconfinder.com/data/icons/food-1-11/128/food-24-512.png",
+        name: "noodles",
         price: "$$",
         cuisine: "chinese"
         }];

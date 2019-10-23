@@ -10,13 +10,17 @@ export class AppComponent {
 
     constructor(
         private router: Router,
-        private authenticationService: AuthenticationService
-    ) {
+
+        //subscribes to this.authenticationService.currentUser observable
+        //updates currentUser when user logs in/out
+        private authenticationService: AuthenticationService) {
+            //
         this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     }
 
     logout() {
         this.authenticationService.logout();
+        //logs out then redirects back to login page
         this.router.navigate(['/login']);
     }
 }

@@ -10,6 +10,7 @@ export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
     submitted = false;
+    cuisines: string[];
 
     constructor(
         private formBuilder: FormBuilder,
@@ -58,3 +59,7 @@ export class RegisterComponent implements OnInit {
                 });
     }
 }
+
+
+
+let cuisines = ['american', 'italian', 'chinese'];

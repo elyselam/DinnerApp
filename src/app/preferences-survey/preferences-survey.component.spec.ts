@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PreferencesModalComponent } from './preferences-modal.component';
+import { PreferencesSurveyComponent } from './preferences-survey.component';
 
-describe('PreferencesModalComponent', () => {
-  let component: PreferencesModalComponent;
-  let fixture: ComponentFixture<PreferencesModalComponent>;
+describe('PreferencesSurveyComponent', () => {
+  let component: PreferencesSurveyComponent;
+  let fixture: ComponentFixture<PreferencesSurveyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PreferencesModalComponent ]
+      declarations: [ PreferencesSurveyComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PreferencesModalComponent);
+    fixture = TestBed.createComponent(PreferencesSurveyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
