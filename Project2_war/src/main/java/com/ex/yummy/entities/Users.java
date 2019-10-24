@@ -1,11 +1,16 @@
 package com.ex.yummy.entities;
 
+import com.sun.xml.internal.ws.developer.Serialization;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 import java.util.ArrayList;
 
 @Getter
@@ -16,8 +21,7 @@ import java.util.ArrayList;
 @Entity
 @Table
 
-
-public class Users {
+public class Users implements Externalizable{
     public Users(String userName, String email, String password, int zipCode, ArrayList<Trips> trips) {
         this.userName = userName;
         this.email = email;
@@ -33,9 +37,8 @@ public class Users {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-
     private int id;
+
     @Column(name="user_name")
     private String userName;
     private String email;
@@ -52,9 +55,13 @@ public class Users {
     private ArrayList<Trips> trips;
 
 
+    @Override
+    public void writeExternal(ObjectOutput out) throws IOException {
 
+    }
 
+    @Override
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
 
-
-
+    }
 }

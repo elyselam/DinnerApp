@@ -14,9 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@CrossOrigin(origins = "http://localhost:4200")
 @Controller
 @ResponseBody
+@CrossOrigin(origins = "https://localhost:4200")
 public class FunSearchController {
     ObjectMapper obMap;
     FunSearchOne servy;
@@ -52,6 +52,6 @@ public class FunSearchController {
             // maybe add default return to cover some bases?
         }
 
- ;      return servy.prepareSecondRound(new int[] {1,2,3,4,5,6,7,8}); //random default array in case something went wrong with the read.
+      return servy.prepareSecondRound(new int[] {1,2,3,4,5,6,7,8}); //random default array in case something went wrong with the read.
     }
 }

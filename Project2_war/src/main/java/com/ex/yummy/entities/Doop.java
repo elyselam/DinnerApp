@@ -23,7 +23,7 @@ public class Doop {
     private String name;
     private int mexican=0, chinese=0, japanese=0, thai=0, greek=0, indian=0, caribbean=0, italian=0, german=0, korean=0, american=0, deli=0, vietnamese=0, breakfast=0, soulFood=0, bakery=0;
 
-// this method give a random cuisine type from that foods' associated types
+
     public int doopSpit() {
         int arr[] = {
                 this.mexican,
