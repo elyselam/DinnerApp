@@ -2,7 +2,6 @@ package com.ex.yummy.web;
 
 import com.ex.yummy.services.Authentication;
 import com.ex.yummy.services.Register;
-import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;

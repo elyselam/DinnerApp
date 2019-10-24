@@ -5,9 +5,7 @@
 
 <div class="row">
 <!-- col lg 6 -->
-<app-image-box (click)="addToWinners()" [image]="food.image" *ngFor="let food of foods"></app-image-box>
-
-
+<app-image-box (click)="addToWinners(food)" [link]="food.link" [name]="food.name" *ngFor="let food of battle"></app-image-box>
 
 
 </div>
@@ -20,11 +18,11 @@
 
         <!-- <li *ngFor="let item of items">
     </li> -->
-<!-- 
+<!--
 
 
 
-    
+
 </div> -->
 
 

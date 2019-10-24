@@ -6,13 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./image-box.component.css']
 })
 export class ImageBoxComponent implements OnInit {
-  @Input() image: string;
+  @Input() link: string;
+  @Input() name: string;
 
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.image)
+    console.log(this.link)
   }
 
 }

@@ -45,7 +45,33 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- nav -->\n<nav class=\"navbar navbar-expand navbar-dark bg-dark\" *ngIf=\"currentUser\">\n    <div class=\"navbar-nav\">\n        <a class=\"nav-item nav-link\" routerLink=\"/\">Home</a>\n        <a class=\"nav-item nav-link\" (click)=\"logout()\">Logout</a>\n    </div>\n</nav>\n\n<!-- main app container -->\n<div class=\"jumbotron\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-sm-6 offset-sm-3\">\n                <alert></alert>\n                <router-outlet></router-outlet>\n            </div>\n        </div>\n    </div>\n</div>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- nav -->\r\n<nav class=\"navbar navbar-expand navbar-dark bg-dark\" *ngIf=\"currentUser\">\r\n    <div class=\"navbar-nav\">\r\n        <a class=\"nav-item nav-link\" routerLink=\"/\">Home</a>\r\n        <a class=\"nav-item nav-link\" (click)=\"logout()\">Logout</a>\r\n    </div>\r\n</nav>\r\n\r\n<h1> goog</h1>\r\n<div align-text=\"center\"><router-outlet></router-outlet></div>\r\n\r\n\r\n\r\n\r\n\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/clickable-cuisine/clickable-cuisine.component.html":
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/clickable-cuisine/clickable-cuisine.component.html ***!
+  \**********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<span [hidden]=\"clicked\" class=\"card-body border\" (click)=\"addToArray()\">\r\n        <!-- style=\"height:200px; width:200px;\" -->\r\n    {{cuisine}}\r\n</span>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/cuisines/cuisines.component.html":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/cuisines/cuisines.component.html ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n    <label for=\"registration\">Registration form</label>\r\n    <form [formGroup]=\"registerForm\" (ngSubmit)=\"logRegisterValues()\">\r\n        <label for=\"address\">Address</label>\r\n        <input type=\"text\" formControlName=\"address\">\r\n        <div *ngIf=\"!registerForm.controls.address.valid && registerForm.controls.address.touched\">Invalid address</div>\r\n        <input type=\"submit\"[disabled]=\"!registerForm.valid\">\r\n        <!-- <div *ngIf=\"!registerForm.valid && registerForm.touched\">Invalid</div> -->\r\n    </form>\r\n    <p>Entered address: {{address}}</p>\r\n    <br>\r\n\r\n    <div class=\"container-fluid\" id=\"preferences-form-container\">\r\n            <div class=\"container-fluid\" id=\"clickables-container\">\r\n\r\n        <h1>Which cuisines do you prefer?</h1>                    \r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <app-clickable-cuisine [cuisine]=\"cuisine\" *ngFor=\"let cuisine of cuisines\"></app-clickable-cuisine>\r\n                    \r\n                    </div>\r\n                    </div>\r\n                    <br>\r\n        \r\n                    <h1>Liked Cuisines</h1>\r\n                    <div class=\"container\">\r\n                        <app-clickable-cuisine [cuisine]=\"cuisine\" *ngFor=\"let cuisine of likedCuisines\"></app-clickable-cuisine>\r\n                    </div>\r\n\r\n                    <button class=\"btn btn-primary\" (click)=\"submitPreferences()\">Done</button>\r\n\r\n");
 
 /***/ }),
 
@@ -58,7 +84,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hi {{currentUser.firstName}}!</h1>\n<p>Welcome back! You want more nom noms?</p>\n<h3>Hungry? </h3>\n<ul>\n    <!-- <li *ngFor=\"let user of users\">\n        {{user.username}} ({{user.firstName}} {{user.lastName}})\n        - <a (click)=\"deleteUser(user.id)\" class=\"text-danger\">Delete</a>\n    </li> -->\n\n\n        <!-- <li *ngFor=\"let item of items\">\n    </li> -->\n</ul>");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hi {{currentUser.firstName}}!</h1>\r\n<p>Welcome back! You want more nom noms?</p>\r\n<h3>Hungry? </h3>\r\n<ul>\r\n\r\n<div class=\"row\">\r\n<!-- col lg 6 -->\r\n<app-image-box (click)=\"addToWinners(food)\" [link]=\"food.link\" [name]=\"food.name\" *ngFor=\"let food of battle\"></app-image-box>\r\n\r\n\r\n</div>\r\n\r\n    <!-- <li *ngFor=\"let user of users\">\r\n        {{user.username}} ({{user.firstName}} {{user.lastName}})\r\n        - <a (click)=\"deleteUser(user.id)\" class=\"text-danger\">Delete</a>\r\n    </li> -->\r\n\r\n\r\n        <!-- <li *ngFor=\"let item of items\">\r\n    </li> -->\r\n<!--\r\n\r\n\r\n\r\n\r\n</div> -->\r\n\r\n\r\n\r\n\r\n\r\n</ul>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/image-box/image-box.component.html":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/image-box/image-box.component.html ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("  <!-- <hr/>List of Images<hr/> -->\r\n<div class=\"box\" >\r\n\r\n  <!-- <div class=\"box\"> -->\r\n      <div class=\"card\">\r\n        <div class=\"imgBx\">\r\n\r\n\r\n<!-- <div *ngFor=\"let i of foods\"> -->\r\n<img [src]=\"image\">\r\n<!-- </div> -->\r\n\r\n\r\n </div>\r\n        <div class=\"details\">\r\n            <h2>{{name}}<br></h2>\r\n        </div>\r\n\r\n\r\n      <!-- </div> -->\r\n\r\n\t  </div>\r\n\r\n");
 
 /***/ }),
 
@@ -71,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Login</h2>\n<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\n    <div class=\"form-group\">\n        <label for=\"username\">Username</label>\n        <input type=\"text\" formControlName=\"username\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.username.errors }\" />\n        <div *ngIf=\"submitted && f.username.errors\" class=\"invalid-feedback\">\n            <div *ngIf=\"f.username.errors.required\">Username is required</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"password\">Password</label>\n        <input type=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.password.errors }\" />\n        <div *ngIf=\"submitted && f.password.errors\" class=\"invalid-feedback\">\n            <div *ngIf=\"f.password.errors.required\">Password is required</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <button [disabled]=\"loading\" class=\"btn btn-primary\">Login</button>\n        <img *ngIf=\"loading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\n        <a [routerLink]=\"['/register']\" class=\"btn btn-link\">Register</a>\n    </div>\n</form>");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2>Login</h2>\r\n<!-- attribute directive binding form to the loginForm prop of login component \r\nwhen form submitted, formGrup emits ngSubmit event that triggers onSubmit(). binds ngSubmit event to the onSubmit() -->\r\n<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\r\n    <div class=\"form-group\">\r\n        <label for=\"username\">Username</label>\r\n        <input type=\"text\" formControlName=\"username\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.username.errors }\" />\r\n        <div *ngIf=\"submitted && f.username.errors\" class=\"invalid-feedback\">\r\n            <div *ngIf=\"f.username.errors.required\">Username is required</div>\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label for=\"password\">Password</label>\r\n        <!--  -->\r\n        <input type=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.password.errors }\" />\r\n\r\n        <!-- message appear red  -->\r\n        <div *ngIf=\"submitted && f.password.errors\" class=\"invalid-feedback\">\r\n            <!-- renders message -->\r\n            <div *ngIf=\"f.password.errors.required\">Password is required</div>\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <button [disabled]=\"loading\" class=\"btn btn-primary\">Login</button>\r\n        <img *ngIf=\"loading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\r\n        <a [routerLink]=\"['/register']\" class=\"btn btn-link\">Register</a>\r\n    </div>\r\n</form>");
 
 /***/ }),
 
@@ -84,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Register</h2>\n<form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\n    <div class=\"form-group\">\n        <label for=\"firstName\">First Name</label>\n        <input type=\"text\" formControlName=\"firstName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.firstName.errors }\" />\n        <div *ngIf=\"submitted && f.firstName.errors\" class=\"invalid-feedback\">\n            <div *ngIf=\"f.firstName.errors.required\">First Name is required</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"lastName\">Last Name</label>\n        <input type=\"text\" formControlName=\"lastName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.lastName.errors }\" />\n        <div *ngIf=\"submitted && f.lastName.errors\" class=\"invalid-feedback\">\n            <div *ngIf=\"f.lastName.errors.required\">Last Name is required</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"username\">Username</label>\n        <input type=\"text\" formControlName=\"username\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.username.errors }\" />\n        <div *ngIf=\"submitted && f.username.errors\" class=\"invalid-feedback\">\n            <div *ngIf=\"f.username.errors.required\">Username is required</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"password\">Password</label>\n        <input type=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.password.errors }\" />\n        <div *ngIf=\"submitted && f.password.errors\" class=\"invalid-feedback\">\n            <div *ngIf=\"f.password.errors.required\">Password is required</div>\n            <div *ngIf=\"f.password.errors.minlength\">Password must be at least 6 characters</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <button [disabled]=\"loading\" class=\"btn btn-primary\">Register</button>\n        <img *ngIf=\"loading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\n        <a [routerLink]=\"['/login']\" class=\"btn btn-link\">Cancel</a>\n    </div>\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2>Register</h2>\r\n<form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\r\n    <div class=\"form-group\">\r\n        <label for=\"firstName\">First Name</label>\r\n        <input type=\"text\" formControlName=\"firstName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.firstName.errors }\" />\r\n        <div *ngIf=\"submitted && f.firstName.errors\" class=\"invalid-feedback\">\r\n            <div *ngIf=\"f.firstName.errors.required\">First Name is required</div>\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label for=\"lastName\">Last Name</label>\r\n        <input type=\"text\" formControlName=\"lastName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.lastName.errors }\" />\r\n        <div *ngIf=\"submitted && f.lastName.errors\" class=\"invalid-feedback\">\r\n            <div *ngIf=\"f.lastName.errors.required\">Last Name is required</div>\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label for=\"username\">Username</label>\r\n        <input type=\"text\" formControlName=\"username\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.username.errors }\" />\r\n        <div *ngIf=\"submitted && f.username.errors\" class=\"invalid-feedback\">\r\n            <div *ngIf=\"f.username.errors.required\">Username is required</div>\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label for=\"password\">Password</label>\r\n        <input type=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.password.errors }\" />\r\n        <div *ngIf=\"submitted && f.password.errors\" class=\"invalid-feedback\">\r\n            <div *ngIf=\"f.password.errors.required\">Password is required</div>\r\n            <div *ngIf=\"f.password.errors.minlength\">Password must be at least 6 characters</div>\r\n        </div>\r\n    </div>\r\n    \r\n<!--     \r\n\r\n    <form *ngFor=\"let cuisine of cuisines\"> \r\n    <label class=\"checkbox-inline\">\r\n          </label>\r\n    <input type=\"checkbox\" value=\"\">0\r\n    </label>\r\n    <label class=\"checkbox-inline\">\r\n      <input type=\"checkbox\" value=\"\">1\r\n    </label>\r\n    <label class=\"checkbox-inline\">\r\n      <input type=\"checkbox\" value=\"\">2\r\n    </label>\r\n    <label class=\"checkbox-inline\">\r\n      <input type=\"checkbox\" value=\"\">3\r\n\r\n  </form> -->\r\n\r\n\r\n\r\n\r\n<div class=\"form-group\">\r\n        <button [disabled]=\"loading\" class=\"btn btn-primary\">Register</button>\r\n        <img *ngIf=\"loading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\r\n        <a [routerLink]=\"['/login']\" class=\"btn btn-link\">Cancel</a>\r\n    </div>\r\n");
 
 /***/ }),
 
@@ -787,8 +826,10 @@ __webpack_require__.r(__webpack_exports__);
 
 let AuthenticationService = class AuthenticationService {
     constructor(http) {
+        //BehaviorSubject (from RxJS) keeps hold of the current value and emits it to any new subscribers as soon as they subscribe
         this.http = http;
         this.currentUserSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"](JSON.parse(localStorage.getItem('currentUser')));
+        //
         this.currentUser = this.currentUserSubject.asObservable();
     }
     get currentUserValue() {
@@ -809,6 +850,7 @@ let AuthenticationService = class AuthenticationService {
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
+        //Observable get notified of changes and are sent to this method, currentUser is passed into each subscriber
         this.currentUserSubject.next(null);
     }
 };
@@ -916,13 +958,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppComponent = class AppComponent {
-    constructor(router, authenticationService) {
+    constructor(router, 
+    //subscribes to this.authenticationService.currentUser observable
+    //updates currentUser when user logs in/out
+    authenticationService) {
         this.router = router;
         this.authenticationService = authenticationService;
-        this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+        //
+    }
+    ngOnInit() {
+        this.authenticationService.currentUser.subscribe(x => {
+            if (!x) {
+                this.router.navigate(["/login?return=%2F]"]);
+            }
+            else {
+                this.currentUser = x;
+            }
+        });
     }
     logout() {
         this.authenticationService.logout();
+        //logs out then redirects back to login page
         this.router.navigate(['/login']);
     }
 };
@@ -960,12 +1016,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home */ "./src/app/home/index.ts");
 /* harmony import */ var _login__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./login */ "./src/app/login/index.ts");
 /* harmony import */ var _register__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./register */ "./src/app/register/index.ts");
+/* harmony import */ var _image_box_image_box_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./image-box/image-box.component */ "./src/app/image-box/image-box.component.ts");
+/* harmony import */ var _clickable_cuisine_clickable_cuisine_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./clickable-cuisine/clickable-cuisine.component */ "./src/app/clickable-cuisine/clickable-cuisine.component.ts");
+/* harmony import */ var _cuisines_cuisines_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./cuisines/cuisines.component */ "./src/app/cuisines/cuisines.component.ts");
 
 
 
 
 
 // used to create fake backend
+
+
+
 
 
 
@@ -989,7 +1051,10 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components__WEBPACK_IMPORTED_MODULE_8__["AlertComponent"],
             _home__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"],
             _login__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"],
-            _register__WEBPACK_IMPORTED_MODULE_11__["RegisterComponent"]
+            _register__WEBPACK_IMPORTED_MODULE_11__["RegisterComponent"],
+            _image_box_image_box_component__WEBPACK_IMPORTED_MODULE_12__["ImageBoxComponent"],
+            _cuisines_cuisines_component__WEBPACK_IMPORTED_MODULE_14__["CuisinesComponent"],
+            _clickable_cuisine_clickable_cuisine_component__WEBPACK_IMPORTED_MODULE_13__["ClickableCuisineComponent"],
         ],
         providers: [
             { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HTTP_INTERCEPTORS"], useClass: _helpers__WEBPACK_IMPORTED_MODULE_5__["JwtInterceptor"], multi: true },
@@ -1039,6 +1104,148 @@ const routing = _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].for
 
 /***/ }),
 
+/***/ "./src/app/clickable-cuisine/clickable-cuisine.component.css":
+/*!*******************************************************************!*\
+  !*** ./src/app/clickable-cuisine/clickable-cuisine.component.css ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".card-body {\r\n    /* border: 3px, firebrick; */\r\n    border-width: 3px;\r\n    border-style: double;\r\n    margin: 15px, 15px;\r\n}\r\nspan {\r\n    /* margin: 15px, 20px;\r\n     */\r\n     margin-left: 20px;\r\n     margin-top: 20px;\r\n     margin-bottom: 20px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2xpY2thYmxlLWN1aXNpbmUvY2xpY2thYmxlLWN1aXNpbmUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLDRCQUE0QjtJQUM1QixpQkFBaUI7SUFDakIsb0JBQW9CO0lBQ3BCLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0k7TUFDRTtLQUNELGlCQUFpQjtLQUNqQixnQkFBZ0I7S0FDaEIsbUJBQW1CO0FBQ3hCIiwiZmlsZSI6InNyYy9hcHAvY2xpY2thYmxlLWN1aXNpbmUvY2xpY2thYmxlLWN1aXNpbmUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jYXJkLWJvZHkge1xyXG4gICAgLyogYm9yZGVyOiAzcHgsIGZpcmVicmljazsgKi9cclxuICAgIGJvcmRlci13aWR0aDogM3B4O1xyXG4gICAgYm9yZGVyLXN0eWxlOiBkb3VibGU7XHJcbiAgICBtYXJnaW46IDE1cHgsIDE1cHg7XHJcbn1cclxuc3BhbiB7XHJcbiAgICAvKiBtYXJnaW46IDE1cHgsIDIwcHg7XHJcbiAgICAgKi9cclxuICAgICBtYXJnaW4tbGVmdDogMjBweDtcclxuICAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG4gICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XHJcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/clickable-cuisine/clickable-cuisine.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/clickable-cuisine/clickable-cuisine.component.ts ***!
+  \******************************************************************/
+/*! exports provided: ClickableCuisineComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClickableCuisineComponent", function() { return ClickableCuisineComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_cuisine_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/cuisine-service.service */ "./src/app/services/cuisine-service.service.ts");
+
+
+
+let ClickableCuisineComponent = class ClickableCuisineComponent {
+    //inject the cuisine service for access to the data it holds
+    constructor(cuisineServiceService) {
+        this.cuisineServiceService = cuisineServiceService;
+    }
+    ngOnInit() {
+    }
+    addToArray() {
+        // if the clicked cuisine is not already in likedCuisines, 
+        if (this.cuisineServiceService.likedCuisines.indexOf(this.cuisine) === -1) {
+            //add the clicked cuisine to the 'likedCuisines' array in the service.
+            this.cuisineServiceService.likedCuisines.push(this.cuisine);
+            //log the array as it grows
+            console.log(this.cuisineServiceService.likedCuisines);
+            //set clicked to true to hide the clicked cuisine
+            this.clicked = true;
+        }
+        else {
+            //the cuisine has already been added to likedCuisines on the service and should not be added again
+            alert("Already liked.");
+        }
+    }
+};
+ClickableCuisineComponent.ctorParameters = () => [
+    { type: _services_cuisine_service_service__WEBPACK_IMPORTED_MODULE_2__["CuisineServiceService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ClickableCuisineComponent.prototype, "cuisine", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ClickableCuisineComponent.prototype, "clicked", void 0);
+ClickableCuisineComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-clickable-cuisine',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./clickable-cuisine.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/clickable-cuisine/clickable-cuisine.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./clickable-cuisine.component.css */ "./src/app/clickable-cuisine/clickable-cuisine.component.css")).default]
+    })
+], ClickableCuisineComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/cuisines/cuisines.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/cuisines/cuisines.component.css ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2N1aXNpbmVzL2N1aXNpbmVzLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/cuisines/cuisines.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/cuisines/cuisines.component.ts ***!
+  \************************************************/
+/*! exports provided: CuisinesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CuisinesComponent", function() { return CuisinesComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _services_cuisine_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/cuisine-service.service */ "./src/app/services/cuisine-service.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
+
+
+
+let CuisinesComponent = class CuisinesComponent {
+    constructor(cuisineServiceService) {
+        this.cuisineServiceService = cuisineServiceService;
+    }
+    ngOnInit() {
+        //set the cuisines on this component equal to the cuisineService cuisines.
+        this.cuisines = this.cuisineServiceService.cuisines;
+        //set the likedCuisines array of this component to the likedCuisines of the cuisineService
+        this.likedCuisines = this.cuisineServiceService.likedCuisines;
+        //form group with one form control for address.
+        this.registerForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroup"]({
+            'address': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
+        });
+    }
+    // runs when registerForm is submitted.
+    logRegisterValues() {
+        this.address = this.registerForm.value.address;
+        this.registerForm.reset();
+    }
+    submitPreferences() {
+        alert(`Preferences are: ${this.cuisineServiceService.likedCuisines}`);
+    }
+};
+CuisinesComponent.ctorParameters = () => [
+    { type: _services_cuisine_service_service__WEBPACK_IMPORTED_MODULE_1__["CuisineServiceService"] }
+];
+CuisinesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: 'app-cuisines',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./cuisines.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/cuisines/cuisines.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./cuisines.component.css */ "./src/app/cuisines/cuisines.component.css")).default]
+    })
+], CuisinesComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/home/home.component.ts":
 /*!****************************************!*\
   !*** ./src/app/home/home.component.ts ***!
@@ -1053,21 +1260,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../_services */ "./src/app/_services/index.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+
 
 
 
 
 let HomeComponent = class HomeComponent {
+    // // tslint:disable-next-line: quotemark
+    // {image: "https://images.vexels.com/media/users/3/157209/isolated/preview/725aa2473489db2e550656210c557f18-cheesy-pizza-icon-by-vexels.png",
+    // name: "pizza",
+    // price: "$$",
+    // cuisine: "italian"},
+    // {image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPF7nsd9nupjTuUrnBk6CkK9hGBocMe-BqWxyXKmNvhJbHiA42&s",
+    // name: "pancakes",
+    // price: "$$",
+    // cuisine: "italian"},
+    // {image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgKagzoYlQvr8D8nPzqzXaScOQh5BVMtL_5oHvcyjzZ-q4-ng8&s",
+    // name: "macaroni",
+    // price: "$$",
+    // cuisine: "italian"},
+    // {image: "https://cdn3.iconfinder.com/data/icons/food-1-11/128/food-24-512.png",
+    // name: "noodles",
+    // price: "$$",
+    // cuisine: "chinese"},
+    // {image: "https://i.ndtvimg.com/i/2016-06/chinese-625_625x350_81466064119.jpg",
+    // name: "pancakes",
+    // price: "$$",
+    // cuisine: "italian"},
+    // {image: "https://annarborfamily.com/wp-content/uploads/2018/11/pot-stickers.jpg",
+    // name: "dumplings",
+    // price: "$$",
+    // cuisine: "chinese"
+    // }];
     constructor(authenticationService, userService) {
         this.authenticationService = authenticationService;
         this.userService = userService;
+        this.winners = [];
         this.users = [];
+        this.battle = [];
+        this.progress = 0;
+        this.foods = [];
         this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
             this.currentUser = user;
         });
     }
     ngOnInit() {
         this.loadAllUsers();
+        fetch(_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].baseUrl + 'funs/one')
+            .then(response => response.json())
+            .then(doops => this.battle = doops);
+        console.log(this.battle);
+        this.battle.push(this.foods[0]);
+        this.battle.push(this.foods[1]);
     }
     ngOnDestroy() {
         // unsubscribe to ensure no memory leaks
@@ -1082,6 +1327,22 @@ let HomeComponent = class HomeComponent {
         this.userService.getAll().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["first"])()).subscribe(users => {
             this.users = users;
         });
+    }
+    addToWinners(food) {
+        console.log(food);
+        this.progress++;
+        if (this.progress === 4) {
+            //TODO navigate
+        }
+        else {
+            this.nextDoops();
+        }
+    }
+    nextDoops() {
+        this.foods.splice(0, 2);
+        this.battle.splice(0, 2);
+        this.battle.push(this.foods[0]);
+        this.battle.push(this.foods[1]);
     }
 };
 HomeComponent.ctorParameters = () => [
@@ -1110,6 +1371,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return _home_component__WEBPACK_IMPORTED_MODULE_1__["HomeComponent"]; });
 
 
+
+
+
+/***/ }),
+
+/***/ "./src/app/image-box/image-box.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/image-box/image-box.component.css ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("body{\r\n    margin: 0;\r\n    padding: 0;\r\n    display: flex;\r\n    justify-content:center;\r\n     align-items: center; \r\n    min-height: 100vh;\r\n    background: #212121;\r\n    font-family: sans-serif;\r\n  }\r\n  .box{\r\n    /* width: 1200px; */\r\n    display: grid;\r\n    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));\r\n    grid-gap: 15px;\r\n    margin: 0 auto;\r\n  }\r\n  .card{\r\n    position: relative;\r\n    width: 300px;\r\n    height: 350px;\r\n    background: #fff;\r\n    margin: 0 auto;\r\n    border-radius: 4px;\r\n    box-shadow:0 2px 10px rgba(0,0,0,.2);\r\n  }\r\n  .card:before,\r\n  .card:after\r\n  {\r\n    content:\"\";\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    border-radius: 4px;\r\n    background: #fff;\r\n    transition: 0.5s;\r\n    z-index:-1;\r\n  }\r\n  .card:hover:before{\r\n  transform: rotate(20deg);\r\n  box-shadow: 0 2px 20px rgba(0,0,0,.2);\r\n  }\r\n  .card:hover:after{\r\n  transform: rotate(10deg);\r\n  box-shadow: 0 2px 20px rgba(0,0,0,.2);\r\n  }\r\n  .card .imgBx{\r\n  position: absolute;\r\n  top: 10px;\r\n  left: 10px;\r\n  bottom: 10px;\r\n  right: 10px;\r\n  background: #222;\r\n  transition: 0.5s;\r\n  z-index: 1;\r\n  }\r\n  .card:hover .imgBx\r\n  {\r\n    bottom: 80px;\r\n  }\r\n  .card .imgBx img{\r\n      position: relative;\r\n      top: 0;\r\n      left: 0;\r\n      width: 100%;\r\n      height: 100%;\r\n      -o-object-fit: cover;\r\n         object-fit: cover;\r\n  }\r\n  .card .details{\r\n      position: absolute;\r\n      left: 10px;\r\n      right: 10px;\r\n      bottom: 10px;\r\n      height: 60px;\r\n      text-align: center;\r\n  }\r\n  /*   .card .details h2{\r\n   margin: 0;\r\n   padding: 0;\r\n   font-weight: 600;\r\n   font-size: 20px;\r\n   color: #777;\r\n   text-transform: uppercase;\r\n  }  */\r\n  .card .details h2 span{\r\n  font-weight: 500;\r\n  font-size: 16px;\r\n  color: #f38695;\r\n  display: block;\r\n  margin-top: 5px;\r\n   } \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaW1hZ2UtYm94L2ltYWdlLWJveC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksU0FBUztJQUNULFVBQVU7SUFDVixhQUFhO0lBQ2Isc0JBQXNCO0tBQ3JCLG1CQUFtQjtJQUNwQixpQkFBaUI7SUFDakIsbUJBQW1CO0lBQ25CLHVCQUF1QjtFQUN6QjtFQUNBO0lBQ0UsbUJBQW1CO0lBQ25CLGFBQWE7SUFDYiwyREFBMkQ7SUFDM0QsY0FBYztJQUNkLGNBQWM7RUFDaEI7RUFDQTtJQUNFLGtCQUFrQjtJQUNsQixZQUFZO0lBQ1osYUFBYTtJQUNiLGdCQUFnQjtJQUNoQixjQUFjO0lBQ2Qsa0JBQWtCO0lBQ2xCLG9DQUFvQztFQUN0QztFQUNBOzs7SUFHRSxVQUFVO0lBQ1Ysa0JBQWtCO0lBQ2xCLE1BQU07SUFDTixPQUFPO0lBQ1AsV0FBVztJQUNYLFlBQVk7SUFDWixrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixVQUFVO0VBQ1o7RUFDQTtFQUNBLHdCQUF3QjtFQUN4QixxQ0FBcUM7RUFDckM7RUFDQTtFQUNBLHdCQUF3QjtFQUN4QixxQ0FBcUM7RUFDckM7RUFDQTtFQUNBLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsVUFBVTtFQUNWLFlBQVk7RUFDWixXQUFXO0VBQ1gsZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQixVQUFVO0VBQ1Y7RUFFQTs7SUFFRSxZQUFZO0VBQ2Q7RUFFQTtNQUNJLGtCQUFrQjtNQUNsQixNQUFNO01BQ04sT0FBTztNQUNQLFdBQVc7TUFDWCxZQUFZO01BQ1osb0JBQWlCO1NBQWpCLGlCQUFpQjtFQUNyQjtFQUVBO01BQ0ksa0JBQWtCO01BQ2xCLFVBQVU7TUFDVixXQUFXO01BQ1gsWUFBWTtNQUNaLFlBQVk7TUFDWixrQkFBa0I7RUFDdEI7RUFFRjs7Ozs7OztNQU9NO0VBRUo7RUFDQSxnQkFBZ0I7RUFDaEIsZUFBZTtFQUNmLGNBQWM7RUFDZCxjQUFjO0VBQ2QsZUFBZTtHQUNkIiwiZmlsZSI6InNyYy9hcHAvaW1hZ2UtYm94L2ltYWdlLWJveC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYm9keXtcclxuICAgIG1hcmdpbjogMDtcclxuICAgIHBhZGRpbmc6IDA7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAganVzdGlmeS1jb250ZW50OmNlbnRlcjtcclxuICAgICBhbGlnbi1pdGVtczogY2VudGVyOyBcclxuICAgIG1pbi1oZWlnaHQ6IDEwMHZoO1xyXG4gICAgYmFja2dyb3VuZDogIzIxMjEyMTtcclxuICAgIGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xyXG4gIH1cclxuICAuYm94e1xyXG4gICAgLyogd2lkdGg6IDEyMDBweDsgKi9cclxuICAgIGRpc3BsYXk6IGdyaWQ7XHJcbiAgICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdChhdXRvLWZpdCwgbWlubWF4KDM1MHB4LCAxZnIpKTtcclxuICAgIGdyaWQtZ2FwOiAxNXB4O1xyXG4gICAgbWFyZ2luOiAwIGF1dG87XHJcbiAgfVxyXG4gIC5jYXJke1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgd2lkdGg6IDMwMHB4O1xyXG4gICAgaGVpZ2h0OiAzNTBweDtcclxuICAgIGJhY2tncm91bmQ6ICNmZmY7XHJcbiAgICBtYXJnaW46IDAgYXV0bztcclxuICAgIGJvcmRlci1yYWRpdXM6IDRweDtcclxuICAgIGJveC1zaGFkb3c6MCAycHggMTBweCByZ2JhKDAsMCwwLC4yKTtcclxuICB9XHJcbiAgLmNhcmQ6YmVmb3JlLFxyXG4gIC5jYXJkOmFmdGVyXHJcbiAge1xyXG4gICAgY29udGVudDpcIlwiO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAwO1xyXG4gICAgbGVmdDogMDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xyXG4gICAgYmFja2dyb3VuZDogI2ZmZjtcclxuICAgIHRyYW5zaXRpb246IDAuNXM7XHJcbiAgICB6LWluZGV4Oi0xO1xyXG4gIH1cclxuICAuY2FyZDpob3ZlcjpiZWZvcmV7XHJcbiAgdHJhbnNmb3JtOiByb3RhdGUoMjBkZWcpO1xyXG4gIGJveC1zaGFkb3c6IDAgMnB4IDIwcHggcmdiYSgwLDAsMCwuMik7XHJcbiAgfVxyXG4gIC5jYXJkOmhvdmVyOmFmdGVye1xyXG4gIHRyYW5zZm9ybTogcm90YXRlKDEwZGVnKTtcclxuICBib3gtc2hhZG93OiAwIDJweCAyMHB4IHJnYmEoMCwwLDAsLjIpO1xyXG4gIH1cclxuICAuY2FyZCAuaW1nQnh7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRvcDogMTBweDtcclxuICBsZWZ0OiAxMHB4O1xyXG4gIGJvdHRvbTogMTBweDtcclxuICByaWdodDogMTBweDtcclxuICBiYWNrZ3JvdW5kOiAjMjIyO1xyXG4gIHRyYW5zaXRpb246IDAuNXM7XHJcbiAgei1pbmRleDogMTtcclxuICB9XHJcbiAgXHJcbiAgLmNhcmQ6aG92ZXIgLmltZ0J4XHJcbiAge1xyXG4gICAgYm90dG9tOiA4MHB4O1xyXG4gIH1cclxuXHJcbiAgLmNhcmQgLmltZ0J4IGltZ3tcclxuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICB0b3A6IDA7XHJcbiAgICAgIGxlZnQ6IDA7XHJcbiAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgIG9iamVjdC1maXQ6IGNvdmVyO1xyXG4gIH1cclxuXHJcbiAgLmNhcmQgLmRldGFpbHN7XHJcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgbGVmdDogMTBweDtcclxuICAgICAgcmlnaHQ6IDEwcHg7XHJcbiAgICAgIGJvdHRvbTogMTBweDtcclxuICAgICAgaGVpZ2h0OiA2MHB4O1xyXG4gICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgfVxyXG5cclxuLyogICAuY2FyZCAuZGV0YWlscyBoMntcclxuICAgbWFyZ2luOiAwO1xyXG4gICBwYWRkaW5nOiAwO1xyXG4gICBmb250LXdlaWdodDogNjAwO1xyXG4gICBmb250LXNpemU6IDIwcHg7XHJcbiAgIGNvbG9yOiAjNzc3O1xyXG4gICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gIH0gICovXHJcblxyXG4gIC5jYXJkIC5kZXRhaWxzIGgyIHNwYW57XHJcbiAgZm9udC13ZWlnaHQ6IDUwMDtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgY29sb3I6ICNmMzg2OTU7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbiAgbWFyZ2luLXRvcDogNXB4O1xyXG4gICB9ICJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/image-box/image-box.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/image-box/image-box.component.ts ***!
+  \**************************************************/
+/*! exports provided: ImageBoxComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImageBoxComponent", function() { return ImageBoxComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let ImageBoxComponent = class ImageBoxComponent {
+    constructor() { }
+    ngOnInit() {
+        console.log(this.link);
+    }
+};
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ImageBoxComponent.prototype, "link", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ImageBoxComponent.prototype, "name", void 0);
+ImageBoxComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-image-box',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./image-box.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/image-box/image-box.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./image-box.component.css */ "./src/app/image-box/image-box.component.css")).default]
+    })
+], ImageBoxComponent);
 
 
 
@@ -1157,6 +1469,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LoginComponent = class LoginComponent {
+    //dependencies that are required by component, automaticcaly injected when component is created
     constructor(formBuilder, route, router, authenticationService, alertService) {
         this.formBuilder = formBuilder;
         this.route = route;
@@ -1170,12 +1483,17 @@ let LoginComponent = class LoginComponent {
             this.router.navigate(['/']);
         }
     }
+    //run once after componenet is created
     ngOnInit() {
+        //creates new FormGroup and assign it to this.loginForm prop
         this.loginForm = this.formBuilder.group({
+            //params passed into FormBuilder tell it to create 2 form controls: username & password
+            //initalized with "" and set to required
             username: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
             password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
         });
         // get return url from route parameters or default to '/'
+        //lets you redirect user back to original page before logging in
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
     // convenience getter for easy access to form fields
@@ -1187,12 +1505,18 @@ let LoginComponent = class LoginComponent {
             return;
         }
         this.loading = true;
+        //authenticationService returns an Observable that we subscribe() for the results of authentication
         this.authenticationService.login(this.f.username.value, this.f.password.value)
+            //after the first value is emitted, pipe(first()) unsubscribes from the observable immediately
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["first"])())
             .subscribe(data => {
+            //on success, user is redirected to returnUrl by:
             this.router.navigate([this.returnUrl]);
-        }, error => {
+        }, 
+        //on fail, the error message is stored in this.error
+        error => {
             this.alertService.error(error);
+            //and loading prop is reset back to false
             this.loading = false;
         });
     }
@@ -1306,6 +1630,37 @@ RegisterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({ template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./register.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/register/register.component.html")).default })
 ], RegisterComponent);
 
+let cuisines = ['american', 'italian', 'chinese'];
+
+
+/***/ }),
+
+/***/ "./src/app/services/cuisine-service.service.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/services/cuisine-service.service.ts ***!
+  \*****************************************************/
+/*! exports provided: CuisineServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CuisineServiceService", function() { return CuisineServiceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let CuisineServiceService = class CuisineServiceService {
+    constructor() {
+        this.cuisines = ['Chinese', 'American', 'Japanese'];
+        this.likedCuisines = new Array();
+    }
+};
+CuisineServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], CuisineServiceService);
+
 
 
 /***/ }),
@@ -1326,7 +1681,8 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 
 const environment = {
-    production: false
+    production: false,
+    baseUrl: 'http://localhost:8080/api'
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -1375,7 +1731,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\dinhh\1908-aug09-java-aug\client\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\treeh\Documents\GitHub\DinnerApp\Fronty\src\main.ts */"./src/main.ts");
 
 
 /***/ })
