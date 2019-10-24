@@ -3,12 +3,19 @@
 <h3>Hungry? </h3>
 <ul>
 
-<div class="row">
+<div class="row" *ngIf="!this.step">
 <!-- col lg 6 -->
-<app-image-box (click)="addToWinners(food)" [link]="food.link" [name]="food.name" *ngFor="let food of battle"></app-image-box>
+<app-image-box (click)="addToWinners(food)" [image]="food.link" [name]="food.name" *ngFor="let food of battle"></app-image-box>
 
 
 </div>
+
+<div class="row" *ngIf="this.step">
+  <!-- col lg 6 -->
+  <app-image-box (click)="addToSecondo(food)" [image]="food.link" [name]="food.name" *ngFor="let food of battle"></app-image-box>
+
+
+  </div>
 
     <!-- <li *ngFor="let user of users">
         {{user.username}} ({{user.firstName}} {{user.lastName}})

@@ -39,7 +39,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<!-- nav -->\r\n<nav class=\"navbar navbar-expand navbar-dark bg-dark\" *ngIf=\"currentUser\">\r\n    <div class=\"navbar-nav\">\r\n        <a class=\"nav-item nav-link\" routerLink=\"/\">Home</a>\r\n        <a class=\"nav-item nav-link\" (click)=\"logout()\">Logout</a>\r\n    </div>\r\n</nav>\r\n\r\n<h1> goog</h1>\r\n<div align-text=\"center\"><router-outlet></router-outlet></div>\r\n\r\n\r\n\r\n\r\n\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<!-- nav -->\r\n<nav class=\"navbar navbar-expand navbar-dark bg-dark\" *ngIf=\"currentUser\">\r\n    <div class=\"navbar-nav\">\r\n        <a class=\"nav-item nav-link\" routerLink=\"/\">Home</a>\r\n        <a class=\"nav-item nav-link\" (click)=\"logout()\">Logout</a>\r\n    </div>\r\n</nav>\r\n\r\n<h1> boobies</h1>\r\n<div align-text=\"center\"><router-outlet></router-outlet></div>\r\n\r\n\r\n\r\n\r\n\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/clickable-cuisine/clickable-cuisine.component.html": 
@@ -72,7 +72,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<h1>Hi {{currentUser.firstName}}!</h1>\r\n<p>Welcome back! You want more nom noms?</p>\r\n<h3>Hungry? </h3>\r\n<ul>\r\n\r\n<div class=\"row\">\r\n<!-- col lg 6 -->\r\n<app-image-box (click)=\"addToWinners(food)\" [link]=\"food.link\" [name]=\"food.name\" *ngFor=\"let food of battle\"></app-image-box>\r\n\r\n\r\n</div>\r\n\r\n    <!-- <li *ngFor=\"let user of users\">\r\n        {{user.username}} ({{user.firstName}} {{user.lastName}})\r\n        - <a (click)=\"deleteUser(user.id)\" class=\"text-danger\">Delete</a>\r\n    </li> -->\r\n\r\n\r\n        <!-- <li *ngFor=\"let item of items\">\r\n    </li> -->\r\n<!--\r\n\r\n\r\n\r\n\r\n</div> -->\r\n\r\n\r\n\r\n\r\n\r\n</ul>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<h1>Hi {{currentUser.firstName}}!</h1>\r\n<p>Welcome back! You want more nom noms?</p>\r\n<h3>Hungry? </h3>\r\n<ul>\r\n\r\n<div class=\"row\" *ngIf=\"this.step\">\r\n<!-- col lg 6 -->\r\n<app-image-box (click)=\"addToWinners(food)\" [image]=\"food.link\" [name]=\"food.name\" *ngFor=\"let food of battle\"></app-image-box>\r\n\r\n\r\n</div>\r\n\r\n<div class=\"row\" *ngIf=\"!this.step\">\r\n  <!-- col lg 6 -->\r\n  <app-image-box (click)=\"addToSecondo(food)\" [image]=\"food.link\" [name]=\"food.name\" *ngFor=\"let food of battle\"></app-image-box>\r\n\r\n\r\n  </div>\r\n\r\n    <!-- <li *ngFor=\"let user of users\">\r\n        {{user.username}} ({{user.firstName}} {{user.lastName}})\r\n        - <a (click)=\"deleteUser(user.id)\" class=\"text-danger\">Delete</a>\r\n    </li> -->\r\n\r\n\r\n        <!-- <li *ngFor=\"let item of items\">\r\n    </li> -->\r\n<!--\r\n\r\n\r\n\r\n\r\n</div> -->\r\n\r\n\r\n\r\n\r\n\r\n</ul>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/image-box/image-box.component.html": 
@@ -1186,40 +1186,30 @@
             /* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../_services */ "./src/app/_services/index.ts");
             /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
             var HomeComponent = /** @class */ (function () {
-                // // tslint:disable-next-line: quotemark
-                // {image: "https://images.vexels.com/media/users/3/157209/isolated/preview/725aa2473489db2e550656210c557f18-cheesy-pizza-icon-by-vexels.png",
-                // name: "pizza",
-                // price: "$$",
-                // cuisine: "italian"},
-                // {image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPF7nsd9nupjTuUrnBk6CkK9hGBocMe-BqWxyXKmNvhJbHiA42&s",
-                // name: "pancakes",
-                // price: "$$",
-                // cuisine: "italian"},
-                // {image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgKagzoYlQvr8D8nPzqzXaScOQh5BVMtL_5oHvcyjzZ-q4-ng8&s",
-                // name: "macaroni",
-                // price: "$$",
-                // cuisine: "italian"},
-                // {image: "https://cdn3.iconfinder.com/data/icons/food-1-11/128/food-24-512.png",
-                // name: "noodles",
-                // price: "$$",
-                // cuisine: "chinese"},
-                // {image: "https://i.ndtvimg.com/i/2016-06/chinese-625_625x350_81466064119.jpg",
-                // name: "pancakes",
-                // price: "$$",
-                // cuisine: "italian"},
-                // {image: "https://annarborfamily.com/wp-content/uploads/2018/11/pot-stickers.jpg",
-                // name: "dumplings",
-                // price: "$$",
-                // cuisine: "chinese"
-                // }];
+                // tslint:disable-next-line: quotemark
+                // {link: "https://images.vexels.com/media/users/3/157209/isolated/preview/725aa2473489db2e550656210c557f18-cheesy-pizza-icon-by-vexels.png",
+                // name: "pizza"},
+                // {link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPF7nsd9nupjTuUrnBk6CkK9hGBocMe-BqWxyXKmNvhJbHiA42&s",
+                // name: "pancakes"},
+                // {link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgKagzoYlQvr8D8nPzqzXaScOQh5BVMtL_5oHvcyjzZ-q4-ng8&s",
+                // name: "macaroni"},
+                // {link: "https://cdn3.iconfinder.com/data/icons/food-1-11/128/food-24-512.png",
+                // name: "noodles"},
+                // {link: "https://i.ndtvimg.com/i/2016-06/chinese-625_625x350_81466064119.jpg",
+                // name: "pancakes"},
+                // {link: "https://annarborfamily.com/wp-content/uploads/2018/11/pot-stickers.jpg",
+                // name: "dumplings"
+                // }
                 function HomeComponent(authenticationService, userService) {
                     var _this = this;
                     this.authenticationService = authenticationService;
                     this.userService = userService;
                     this.winners = [];
+                    this.secondo = [];
                     this.users = [];
                     this.battle = [];
                     this.progress = 0;
+                    this.step = false;
                     this.foods = [];
                     this.currentUserSubscription = this.authenticationService.currentUser.subscribe(function (user) {
                         _this.currentUser = user;
@@ -1228,12 +1218,15 @@
                 HomeComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this.loadAllUsers();
-                    fetch(_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].baseUrl + 'funs/one')
+                    fetch(_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].baseUrl + '/funs/one', {
+                        method: 'Post',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                    })
                         .then(function (response) { return response.json(); })
-                        .then(function (doops) { return _this.battle = doops; });
-                    console.log(this.battle);
-                    this.battle.push(this.foods[0]);
-                    this.battle.push(this.foods[1]);
+                        .then(function (doops) { return _this.processStuff(doops); });
+                    this.progress = 0;
                 };
                 HomeComponent.prototype.ngOnDestroy = function () {
                     // unsubscribe to ensure no memory leaks
@@ -1252,10 +1245,29 @@
                     });
                 };
                 HomeComponent.prototype.addToWinners = function (food) {
+                    this.winners.push(food);
+                    console.log("buttsex");
+                    ++this.progress;
+                    console.log(this.progress);
+                    console.log("buttsex");
+                    if (this.progress === 4) {
+                        console.log("butttttsex");
+                        console.log(this.winners);
+                        this.step = true;
+                        console.log(this.step);
+                        this.getSecondRound(this.winners);
+                    }
+                    else {
+                        this.nextDoops();
+                    }
+                };
+                HomeComponent.prototype.addToSecondo = function (food) {
                     console.log(food);
+                    this.winners.push(food);
                     this.progress++;
                     if (this.progress === 4) {
-                        //TODO navigate
+                        console.log(this.winners);
+                        this.step = true;
                     }
                     else {
                         this.nextDoops();
@@ -1266,6 +1278,25 @@
                     this.battle.splice(0, 2);
                     this.battle.push(this.foods[0]);
                     this.battle.push(this.foods[1]);
+                };
+                HomeComponent.prototype.processStuff = function (arrrrr) {
+                    this.foods = arrrrr;
+                    this.battle.push(this.foods[0]);
+                    this.battle.push(this.foods[1]);
+                    console.log(this.battle);
+                };
+                HomeComponent.prototype.getSecondRound = function (win) {
+                    var _this = this;
+                    this.battle = [];
+                    fetch(_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].baseUrl + '/funs/two', {
+                        method: 'Post',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: win
+                    })
+                        .then(function (response) { return response.json(); })
+                        .then(function (doops) { return _this.processStuff(doops); });
                 };
                 return HomeComponent;
             }());
@@ -1317,13 +1348,13 @@
                 function ImageBoxComponent() {
                 }
                 ImageBoxComponent.prototype.ngOnInit = function () {
-                    console.log(this.link);
+                    console.log(this.image);
                 };
                 return ImageBoxComponent;
             }());
             tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-            ], ImageBoxComponent.prototype, "link", void 0);
+            ], ImageBoxComponent.prototype, "image", void 0);
             tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
             ], ImageBoxComponent.prototype, "name", void 0);
@@ -1564,7 +1595,7 @@
             // The list of file replacements can be found in `angular.json`.
             var environment = {
                 production: false,
-                baseUrl: 'http://localhost:8080/api'
+                baseUrl: 'http://localhost:8090/api'
             };
             /*
              * For easier debugging in development mode, you can import the following file
