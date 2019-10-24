@@ -199,5 +199,3 @@ export class HomeComponent implements OnInit, OnDestroy {
       return type;
     }
 }
-
-
