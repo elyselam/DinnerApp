@@ -1,11 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, from } from 'rxjs';
 import { first } from 'rxjs/operators';
 
 import { User } from '../_models';
 import { UserService, AuthenticationService } from '../_services';
 import { Food } from '../models/food';
 import { environment } from '../../environments/environment';
+import { stringify } from '@angular/compiler/src/util';
+import { platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 
 @Component({ templateUrl: 'home.component.html' })
 export class HomeComponent implements OnInit, OnDestroy {
@@ -16,7 +18,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     users: User[] = [];
     battle: Food[] = [];
     progress = 0;
-    step = false;
+    step = 0;
+    recs: string[] = [];
+    reccy: Food;
+    prime: string;
 
 
     foods: Food[] = [];
@@ -88,15 +93,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     addToWinners(food){
         this.winners.push(food);
-        console.log("tickles");
         ++this.progress;
         console.log(this.progress);
-        console.log("tickles");
-        if(this.progress === 3) {
-          console.log("butttttsex");
+        if(this.progress === 4) {
           console.log(this.winners);
-          this.step = true;
-          console.log(this.step);
+          this.step++;
+          this.progress = 0;
           this.getSecondRound(this.winners);
         }
         else {
@@ -107,12 +109,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     addToSecondo(food){
-      console.log(food);
-      this.winners.push(food);
+      this.secondo.push(food);
       this.progress++;
       if (this.progress === 4) {
         console.log(this.winners);
-        this.step = true;
+        this.step++;
+        this.battle = [];
+        this.prepareFinal();
+        console.log(this.recs)
       }
       else {
         this.nextDoops();
@@ -147,7 +151,53 @@ export class HomeComponent implements OnInit, OnDestroy {
         .then(doops => this.processStuff(doops));
 
     }
-}
 
+    prepareFinal() {
+      fetch(environment.baseUrl + '/preference/findPreferences', {
+        method: 'Post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+      // body: this.currentUser
+    });
+      this.sumUp();
+      this.prime = this.primeRec();
+
+      fetch("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyB190V6L_hdgXp8PJtbbPr5Tb0eJ16GYeA&input=" + encodeURI(this.prime) + "&inputtype=textquery&fields=formatted_address",{
+        method: 'Post',
+        headers: {
+            'Content-Type': 'application/json'
+        }, })
+        .then(response => response.json())
+        .then(place => this.recs.push(encodeURI(place.candidates.formatted_address)));
+      this.winners.forEach(element => {
+        fetch("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyB190V6L_hdgXp8PJtbbPr5Tb0eJ16GYeA&input=" + encodeURI(element.name) + "&inputtype=textquery&fields=formatted_address",{
+          method: 'Post',
+          headers: {
+              'Content-Type': 'application/json'
+          }, })
+          .then(response => response.json())
+          .then(place => this.recs.push(encodeURI(place.candidates.formatted_address)));
+      });
+    }
+
+    sumUp() {
+      this.winners.forEach ( element => this.reccy.combine(element) );
+
+  }
+
+    primeRec() {
+      const xo = Object.entries(this.reccy);
+      let max = 0;
+      let type = '';
+      for (const key of xo) {
+        if (key[1] > max) {
+          max = key[1];
+          type = key[0];
+        }
+      }
+      return type;
+    }
+}
 
 

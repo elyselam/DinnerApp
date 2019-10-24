@@ -19,6 +19,7 @@ import { ImageBoxComponent } from './image-box/image-box.component';
 
 import { ClickableCuisineComponent } from './clickable-cuisine/clickable-cuisine.component';
 import { CuisinesComponent } from './cuisines/cuisines.component';
+import { FinalComponent } from './fin/final/final.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { CuisinesComponent } from './cuisines/cuisines.component';
         RegisterComponent,
         ImageBoxComponent,
         CuisinesComponent,
-        ClickableCuisineComponent,   
+        ClickableCuisineComponent,
+        FinalComponent,   
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
