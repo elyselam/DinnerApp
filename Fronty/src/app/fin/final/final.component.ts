@@ -7,10 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FinalComponent implements OnInit {
   @Input() rec;
+  @Input() recsname;
+  toggley = false;
 
   constructor() { }
 
   ngOnInit() {
+    this.rec = ["lol", "kek"];
+    this.recsname = ["buttsex", "for sale"]
   }
 
+  toggle() {
+    this.toggley = !this.toggley;
+  }
 }

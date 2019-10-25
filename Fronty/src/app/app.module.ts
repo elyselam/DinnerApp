@@ -12,14 +12,16 @@ import { routing }from './app.routing';
 import { AlertComponent } from './_components';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
-import { LoginComponent } from './login';
-import { RegisterComponent } from './register';
 import { ImageBoxComponent } from './image-box/image-box.component';
 
 
 import { ClickableCuisineComponent } from './clickable-cuisine/clickable-cuisine.component';
 import { CuisinesComponent } from './cuisines/cuisines.component';
 import { FinalComponent } from './fin/final/final.component';
+import { Login2Component } from './login2/login2/login2.component';
+import { Register2Component } from './register2/register2/register2.component';
+import { ContextComponent } from './context/context/context.component';
+import { PrefComponent } from './pref/pref/pref.component';
 
 
 @NgModule({
@@ -33,12 +35,14 @@ import { FinalComponent } from './fin/final/final.component';
         AppComponent,
         AlertComponent,
         HomeComponent,
-        LoginComponent,
-        RegisterComponent,
         ImageBoxComponent,
         CuisinesComponent,
         ClickableCuisineComponent,
-        FinalComponent,   
+        FinalComponent,
+        Login2Component,
+        Register2Component,
+        ContextComponent,
+        PrefComponent,
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

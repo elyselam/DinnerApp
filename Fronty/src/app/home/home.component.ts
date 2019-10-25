@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     progress = 0;
     step = 0;
     recs: string[] = [];
+    recsname: string[] = [];
     reccy: Food;
     prime: string;
 
@@ -91,24 +92,23 @@ export class HomeComponent implements OnInit, OnDestroy {
         });
     }
 
-    addToWinners(food){
+    addToWinners(food) {
         this.winners.push(food);
         ++this.progress;
         console.log(this.progress);
-        if(this.progress === 4) {
+        if (this.progress === 4) {
           console.log(this.winners);
           this.step++;
           this.progress = 0;
           this.getSecondRound(this.winners);
-        }
-        else {
+        } else {
           this.nextDoops();
         }
 
 
     }
 
-    addToSecondo(food){
+    addToSecondo(food) {
       this.secondo.push(food);
       this.progress++;
       if (this.progress === 4) {
@@ -116,9 +116,8 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.step++;
         this.battle = [];
         this.prepareFinal();
-        console.log(this.recs)
-      }
-      else {
+        console.log(this.recs);
+      } else {
         this.nextDoops();
       }
 
@@ -126,8 +125,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
     nextDoops() {
-      this.foods.splice(0,2);
-      this.battle.splice(0,2);
+      this.foods.splice(0, 2);
+      this.battle.splice(0, 2);
       this.battle.push(this.foods[0]);
       this.battle.push(this.foods[1]);
     }
@@ -153,32 +152,36 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     prepareFinal() {
-      fetch(environment.baseUrl + '/preference/findPreferences', {
-        method: 'Post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-      // body: this.currentUser
-    });
-      this.sumUp();
-      this.prime = this.primeRec();
+    //   fetch(environment.baseUrl + '/preference/findPreferences', {
+    //     method: 'Post',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //   // body: this.currentUser
+    // });
+    //   this.sumUp();
+    //   this.prime = this.primeRec();
 
-      fetch("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyB190V6L_hdgXp8PJtbbPr5Tb0eJ16GYeA&input=" + encodeURI(this.prime) + "&inputtype=textquery&fields=formatted_address",{
-        method: 'Post',
-        headers: {
-            'Content-Type': 'application/json'
-        }, })
-        .then(response => response.json())
-        .then(place => this.recs.push(encodeURI(place.candidates.formatted_address)));
-      this.winners.forEach(element => {
-        fetch("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyB190V6L_hdgXp8PJtbbPr5Tb0eJ16GYeA&input=" + encodeURI(element.name) + "&inputtype=textquery&fields=formatted_address",{
-          method: 'Post',
-          headers: {
-              'Content-Type': 'application/json'
-          }, })
-          .then(response => response.json())
-          .then(place => this.recs.push(encodeURI(place.candidates.formatted_address)));
-      });
+    //   fetch('https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyB190V6L_hdgXp8PJtbbPr5Tb0eJ16GYeA&input=' + encodeURI(this.prime) + '&inputtype=textquery&fields=formatted_address', {
+    //     method: 'Post',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     }, })
+    //     .then(response => response.json())
+    //     .then(place => {this.recs.push(encodeURI(place.candidates.formatted_address));
+    //                     this.recsname.push(place.candidates.name);
+    //     });
+    //   this.winners.forEach(element => {
+    //     fetch('https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyB190V6L_hdgXp8PJtbbPr5Tb0eJ16GYeA&input=' + encodeURI(element.name) + '&inputtype=textquery&fields=formatted_address', {
+    //       method: 'Post',
+    //       headers: {
+    //           'Content-Type': 'application/json'
+    //       }, })
+    //       .then(response => response.json())
+    //       .then(place => {this.recs.push(encodeURI(place.candidates.formatted_address));
+    //                       this.recsname.push(place.candidates.name);
+    //       });
+    //   });
     }
 
     sumUp() {

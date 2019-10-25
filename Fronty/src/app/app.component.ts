@@ -17,18 +17,9 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.authenticationService.currentUser.subscribe(x => {
-            if(!x) {
-                this.router.navigate(["/login?return=%2F]"])
-            } else {
-                this.currentUser = x;
-            }
-        });
+        this.router.navigate
     }
 
     logout() {
-        this.authenticationService.logout();
-        //logs out then redirects back to login page
-        this.router.navigate(['/login']);
     }
 }
