@@ -1,13 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription, from } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { first } from 'rxjs/operators';
 
 import { User } from '../_models';
 import { UserService, AuthenticationService } from '../_services';
 import { Food } from '../models/food';
 import { environment } from '../../environments/environment';
-import { stringify } from '@angular/compiler/src/util';
-import { platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 
 @Component({ templateUrl: 'home.component.html' })
 export class HomeComponent implements OnInit, OnDestroy {
@@ -94,12 +92,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     addToWinners(food) {
         this.winners.push(food);
+        console.log("tickles");
         ++this.progress;
         console.log(this.progress);
         if (this.progress === 4) {
           console.log(this.winners);
-          this.step++;
-          this.progress = 0;
+          this.step = true;
+          console.log(this.step);
           this.getSecondRound(this.winners);
         } else {
           this.nextDoops();
