@@ -3,14 +3,14 @@
 <h3>Hungry? </h3>
 <ul>
 
-<div class="row" *ngIf="this.step == 0">
+<div class="row" *ngIf="step == 0">
 <!-- col lg 6 -->
 <app-image-box (click)="addToWinners(food)" [image]="food.link" [name]="food.name" *ngFor="let food of battle"></app-image-box>
 
 
 </div>
 
-<div class="row" *ngIf="this.step == 1">
+<div class="row" *ngIf="step == 1">
   <!-- col lg 6 -->
   <app-image-box (click)="addToSecondo(food)" [image]="food.link" [name]="food.name" *ngFor="let food of battle"></app-image-box>
 
@@ -18,9 +18,9 @@
 </div>
 
 
-<div class="row" *ngIf="this.step == 2">
+<div class="row" *ngIf="step == 2">
   <!-- col lg 6 -->
-  <app-final [rec]="this.recs" [recsname]="this.recsname"></app-final>
+  <app-final [rec]="recs" [rname]="recsname"></app-final>
 
 </div>
 

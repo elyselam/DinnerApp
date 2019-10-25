@@ -7,14 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FinalComponent implements OnInit {
   @Input() rec;
-  @Input() recsname;
+  @Input() rname;
   toggley = false;
 
   constructor() { }
 
   ngOnInit() {
     this.rec = ["lol", "kek"];
-    this.recsname = ["buttsex", "for sale"]
+    this.rname = ["buttsex", "for sale"]
   }
 
   toggle() {

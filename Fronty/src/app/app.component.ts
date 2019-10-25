@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from './_services';
 import { User } from './_models';
 
-@Component({ selector: 'app', templateUrl: 'app.component.html' })
+@Component({ selector: 'app-root', templateUrl: 'app.component.html' })
 export class AppComponent implements OnInit {
     currentUser: User;
 
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.router.navigate
+        this.router.navigate(["/login2"])
     }
 
     logout() {
