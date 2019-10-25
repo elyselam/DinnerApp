@@ -22,13 +22,16 @@ import { CuisinesComponent } from './cuisines/cuisines.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AddressComponent } from './address/address.component';
 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+
 
 @NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        routing
+        routing,
+        FormsModule
     ],
     declarations: [
         AppComponent,
@@ -40,13 +43,15 @@ import { AddressComponent } from './address/address.component';
         CuisinesComponent,
         ClickableCuisineComponent,
         LoginPageComponent,
-        AddressComponent,   
+        AddressComponent,  
+
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
         // provider used to create fake backend
-        fakeBackendProvider
+        fakeBackendProvider,
+        
     ],
     bootstrap: [AppComponent]
 })
