@@ -20,6 +20,7 @@ import { ImageBoxComponent } from './image-box/image-box.component';
 import { ClickableCuisineComponent } from './clickable-cuisine/clickable-cuisine.component';
 import { CuisinesComponent } from './cuisines/cuisines.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { AddressComponent } from './address/address.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
         ImageBoxComponent,
         CuisinesComponent,
         ClickableCuisineComponent,
-        LoginPageComponent,   
+        LoginPageComponent,
+        AddressComponent,   
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

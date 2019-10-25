@@ -10,12 +10,16 @@
 
 </div>
 
+
+
 <div class="row" *ngIf="this.step">
   <!-- col lg 6 -->
   <app-image-box (click)="addToSecondo(food)" [image]="food.link" [name]="food.name" *ngFor="let food of battle"></app-image-box>
 
-
+<app-address></app-address>
   </div>
+
+
 
     <!-- <li *ngFor="let user of users">
         {{user.username}} ({{user.firstName}} {{user.lastName}})
