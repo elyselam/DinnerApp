@@ -7,14 +7,14 @@ import { ContextComponent } from './context/context/context.component';
 import { PrefComponent } from './pref/pref/pref.component';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: 'home', component: HomeComponent },
     { path: 'login2', component: Login2Component },
     { path: 'register', component: Register2Component},
     { path: 'context', component: ContextComponent},
     { path: 'pref', component: PrefComponent},
 
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: 'login2' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

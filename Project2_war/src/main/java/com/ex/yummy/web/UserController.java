@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@CrossOrigin(origins = "https://localhost:4200")
-@Controller
+@CrossOrigin(origins = "http://localhost:4200")
+@RestController
 @RequestMapping("/login")
 public class UserController {
     Authentication auth;
@@ -28,14 +28,16 @@ public class UserController {
     }
 
     @PostMapping(path = "/authentication")
-    public void loginUser(HttpServletRequest request, HttpServletResponse response){
+    public String loginUser(HttpServletRequest request, HttpServletResponse response){
 
         String user_name = request.getParameter("user_name");
         String password = request.getParameter("password");
         if (auth.authenticate(user_name, password)){
             System.out.println("Authentication successful!");
+            return user_name;
         }
         else System.out.println("Authentication failed");
+        return "you're shit";
     }
     @PostMapping(path = "/register")
     public void registerUser(HttpServletRequest request, HttpServletResponse response){

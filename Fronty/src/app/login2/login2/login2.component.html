@@ -1,1 +1,12 @@
-<p>login2 works!</p>
+<div class="col-lg-4">
+    <h1>Welcome, please login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input formControlName="username" placeholder="username" type="text" class="form-control">
+            <div *ngIf="!loginForm.controls.username.valid && loginForm.controls.username.touched" class="alert alert-danger">Enter a valid username</div>
+            <input formControlName="password" placeholder="password" type="text" class="form-control">
+            <div *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.touched" class="alert alert-danger">Enter a valid password</div>
+            <button [disabled]="!loginForm.valid" type="button" class="btn btn-primary" (click)="onSubmit()">Login</button>
+        </div>
+    </form>
+</div>
