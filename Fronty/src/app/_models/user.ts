@@ -4,5 +4,6 @@ export class User {
     password: string;
     firstName?: string;
     lastName?: string;
-    zip?: number;
+    token?: string;
+    zip?: string;
 }

@@ -96,8 +96,9 @@ export class HomeComponent implements OnInit, OnDestroy {
         ++this.progress;
         console.log(this.progress);
         if (this.progress === 4) {
+          this.progress = 0;
           console.log(this.winners);
-          this.step = true;
+          this.step++;
           console.log(this.step);
           this.getSecondRound(this.winners);
         } else {
