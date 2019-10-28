@@ -1,0 +1,31 @@
+<div class="container">
+    <label for="registration">Registration form</label>
+    <form [formGroup]="registerForm" (ngSubmit)="logRegisterValues()">
+        <label for="address">Address</label>
+        <input type="text" formControlName="address">
+        <div *ngIf="!registerForm.controls.address.valid && registerForm.controls.address.touched">Invalid address</div>
+        <input type="submit"[disabled]="!registerForm.valid">
+        <!-- <div *ngIf="!registerForm.valid && registerForm.touched">Invalid</div> -->
+    </form>
+    <p>Entered address: {{address}}</p>
+    <br>
+
+    <div class="container-fluid" id="preferences-form-container">
+            <div class="container-fluid" id="clickables-container">
+
+        <h1>Which cuisines do you prefer?</h1>                    
+                    </div>
+                    <div class="row">
+                        <app-clickable-cuisine [cuisine]="cuisine" *ngFor="let cuisine of cuisines"></app-clickable-cuisine>
+                    
+                    </div>
+                    </div>
+                    <br>
+        
+                    <h1>Liked Cuisines</h1>
+                    <div class="container">
+                        <app-clickable-cuisine [cuisine]="cuisine" *ngFor="let cuisine of likedCuisines"></app-clickable-cuisine>
+                    </div>
+
+                    <button class="btn btn-primary" (click)="submitPreferences()">Done</button>
+
